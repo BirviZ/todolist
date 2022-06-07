@@ -2,4 +2,10 @@
 
 {% block content %}
     <h1 class="header center orange-text">TODOList</h1>
+    {% if not todos %}
+    {% include 'placeholder.j2' %}
+    {% else %}
+    {% include 'todos.j2' %}
+    {% endif %}
+    {% include 'addform.j2' %}
 {% endblock %}
