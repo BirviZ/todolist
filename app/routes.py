@@ -5,8 +5,6 @@ from app.models import Todo
 from app.forms import AddForm
 
 
-todos = []
-
 @app.route('/')
 def index():
     form = AddForm()
