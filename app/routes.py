@@ -9,7 +9,7 @@ from app.forms import AddForm
 def index():
     form = AddForm()
     counters = {'todos': 0, 'active': 0, 'complete': 0}
-    todos = Todo.query.all()
+    todos = Todo.query.order_by(Todo.isComplete).all()
     counters['todos'] = len(todos)
     for todo in todos:
         if todo.isComplete:
