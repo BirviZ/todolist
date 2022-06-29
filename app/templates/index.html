@@ -1,11 +1,42 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1 class="header center orange-text">TODOList</h1>
-    {% if not todos %}
-    {% include 'placeholder.j2' %}
-    {% else %}
-    {% include 'todos.j2' %}
-    {% endif %}
-    {% include 'addform.j2' %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todolist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">TODOS</h1>
+      <p class="counter">TODOS: {{ counters["todos"] }}, Active {{ counters["active"] }}, Complete {{ counters["complete"] }}</p>
+      <form action="{{ url_for('add_todo') }}" method="POST" novalidate>
+      {{ form.hidden_tag() }}
+        <div class="rowcontainer">
+          <div class="longcell">
+            {{ form.body() }}
+          </div>
+          <div class="shortcell">
+            {{ form.submit(class='btn') }}
+          </div>
+        </div>
+      </form>
+      <ul>
+        {% for todo in todos %}
+        <li>
+        {% if todo.isComplete %}
+        <div class="complete row">
+        {% else %}
+        <div class="active row">
+        {% endif %}
+        {{ todo.body }}
+         <a href="{{ url_for('delete', id=todo.id) }}" class="button del">Видалити</a>
+         {% if not todo.isComplete %}
+         <a href="{{ url_for('complete', id=todo.id) }}" class="button complete">Завершити</a>{% endif %}   
+        </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

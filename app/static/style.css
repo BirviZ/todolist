@@ -1,0 +1,98 @@
+input {
+  border-radius: 10px;
+  border: solid 1px #1E90FF;
+  padding: 5px;
+  width: 100%;
+}
+
+.btn {
+  background-color: #1E90FF;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: #40a1ff;
+}
+
+.button {
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: smaller;
+  padding: 2px 10px;
+  margin: 0 2px;
+  display: inline-block;
+  float: right;
+  text-decoration: none;
+}
+
+.del {
+  background-color: #800000;
+}
+
+.complete {
+  background-color: #008000;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0b0046;
+}
+
+.counter {
+  text-align: center;
+  margin-top: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.active {
+  background-color: #1E90FF;
+}
+
+.complete {
+  background-color: #008000;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.rowcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.longcell {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.shortcell {
+  grid-column-start: 4;
+  grid-column-end: 4;
+}
+
+.center {
+  text-align: center;
+}
+
+.row {
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
