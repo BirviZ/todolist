@@ -1,4 +1,4 @@
 .\venv\Scripts\activate
 $Env:FLASK_APP=".\todolist.py"
-$Env:DATABASE_URL="postgresql://birviz_dev:111@localhost/todolist"
+$Env:DATABASE_URL="sqlite:////todolist.db"
 flask run -p 3000

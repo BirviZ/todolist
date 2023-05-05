@@ -8,4 +8,4 @@ class Config(object):
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'postgresql://birviz_dev:111@localhost:5433/todolist'
+        'sqlite:////todolist.db'
